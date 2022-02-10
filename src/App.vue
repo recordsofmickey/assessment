@@ -1,5 +1,6 @@
 <template>
   <div id="nav">
+    <router-link to="/">Home</router-link>
     <router-link v-for="(genre, index) in genresToArray" :key="index" :to="`/genres/${genre}`" v-text="genre"></router-link>
   </div>
   <router-view/>
