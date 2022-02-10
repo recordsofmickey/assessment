@@ -1,16 +1,24 @@
 <template>
   <div id="nav">
-    <router-link to="/">Home</router-link>
-    <router-link v-for="(genre, index) in genresToArray" :key="index" :to="`/genres/${genre}`" v-text="genre"></router-link>
+    <logo></logo>
+    <div class="genres">
+      <router-link to="/">Home</router-link>
+      <router-link v-for="(genre, index) in genresToArray" :key="index" :to="`/genres/${genre}`" v-text="genre"></router-link>
+    </div>
+      <search></search>
   </div>
   <router-view/>
   <modal v-if="modalIsFilled"></modal>
 </template>
 <script>
 import Modal from './components/Modal.vue'
+import search from './components/Search.vue'
+import Logo from './components/Logo.vue'
 export default {
   components: {
-    Modal
+    Modal,
+    search,
+    Logo
   },
   data() {
     return {
@@ -41,15 +49,31 @@ export default {
 
 #nav {
   padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+  align-items: center;
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 #nav a {
   font-weight: bold;
   color: #2c3e50;
-  padding: 1rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  margin: 0.2rem;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #495057;
+  background-color: #99e9f2;
+  border: 1px solid #495057;
+  box-shadow: 0.1rem 0.1rem 0.1rem rgba(146, 151, 156, 0.5);
 }
 </style>
