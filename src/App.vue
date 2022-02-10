@@ -3,10 +3,14 @@
     <router-link v-for="(genre, index) in genresToArray" :key="index" :to="`/genres/${genre}`" v-text="genre"></router-link>
   </div>
   <router-view/>
+  <modal v-if="modalIsFilled"></modal>
 </template>
 <script>
+import Modal from './components/Modal.vue'
 export default {
-
+  components: {
+    Modal
+  },
   data() {
     return {
       
@@ -15,6 +19,9 @@ export default {
   computed: {
     genresToArray() {
       return Array.from(this.$store.state.genres)
+    },
+    modalIsFilled() {
+      return this.$store.state.modalActive
     }
   },
  mounted() { 

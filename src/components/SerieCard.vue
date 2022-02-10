@@ -1,5 +1,5 @@
 <template>
-    <div class="card"> 
+    <div class="card" @click="openModal"> 
         <img :src="serie.image.original" alt="">
         <div class="description">
             <h2>{{serie.name}}</h2>
@@ -11,6 +11,12 @@
 export default {
     props: {
         serie: Object,
+    },
+    methods: {
+        openModal() {
+            this.$store.commit('toggleModal')
+            this.$store.commit('fillModal', this.serie)
+        }
     }
     
 }
