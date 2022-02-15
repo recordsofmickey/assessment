@@ -1,6 +1,6 @@
 <template>
   <div id="nav">
-    <logo></logo>
+    <logo class="logo"></logo>
     <div class="genres">
       <router-link to="/">Home</router-link>
       <router-link v-for="(genre, index) in genresToArray" :key="index" :to="`/genres/${genre}`" v-text="genre"></router-link>
@@ -95,5 +95,20 @@ export default {
 .nav_search .icon {
   height: 1.5rem;
   width: 1.5rem;
+ }
+
+ @media only screen and (max-width: 2600px) {
+   #nav {
+     display: flex;
+     flex-direction: column;
+     flex-wrap: wrap;
+     justify-content: center;
+   }
+   .logo {
+     visibility: hidden;
+   }
+   .nav_search {
+     margin-top: 3rem;
+   }
  }
 </style>
