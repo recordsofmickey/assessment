@@ -1,10 +1,10 @@
 <template>
     <div class="modal" @click="closeModal">
         <div class="modal-content">
-            <img :src="modalContent.image.medium" alt="">
+            <img :src="modalContent.image?.medium" alt="">
             <span class="close" @click="closeModal">&times;</span>
             <h1>{{modalContent.name}}</h1>
-            <p>{{modalContent.network.name}}</p>
+            <p>{{modalContent.network?.name || 'No network known'}}</p>
             <p v-html="modalContent.summary"></p>
             <a v-if="modalContent.officialSite" :href="modalContent.officialSite" target="_blank">Click here for site</a>
         </div>
