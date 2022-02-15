@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-
+    <p>Click your favorite genre above, or use search to find your favorite show</p>
   </div>
 </template>
 
@@ -14,3 +14,9 @@ export default {
   }
 }
 </script>
+<style scoped>
+  p {
+    margin-top: 8rem;
+    font-size: 3rem;
+  }
+</style>
