@@ -1,9 +1,7 @@
 <template>
-    <div class="card" @click="openModal"> 
-        <img :src="serie.image.original" alt="">
-        <div class="description">
+    <div class="card"  :style="{ backgroundImage: `url(${serie.image?.original || 'https://static.tvmaze.com/uploads/images/original_untouched/280/701095.jpg'}` }"> 
+        <div class="overlay" @click="openModal">
             <h2>{{serie.name}}</h2>
-            <div v-html="serie.summary"></div>
         </div>
     </div>
 </template>
@@ -23,24 +21,29 @@ export default {
 </script>
 <style scoped>
  .card {
-     border: 1px solid gray;
-     border-radius: 1rem;
      display: flex;
-     flex-direction: column;
-     max-width: 14rem;
+     width: 32rem;
+     height: 18rem;
      margin: 1rem 1rem;
+     background-repeat: no-repeat;
+     background-size: cover;
+     
  }
- .description {
+ .overlay {
+     width: 100%;
+     height: 100%;
+     background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.603));
      display: flex;
-     flex-direction: column;
-     max-width: 13rem;
-     margin: 0 auto;
-     padding: 1rem;
-     font-size: 0.6rem;
+     flex-grow: 1;
+    justify-content: flex-start;
+     align-items:flex-end;
+     background-size:cover;
  }
-
- .description div {
-     text-align: left;
+ 
+ h2 {
+     color: white;
+     padding-left: 1rem
+     
  }
 
  img {

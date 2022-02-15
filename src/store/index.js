@@ -7,7 +7,9 @@ export default createStore({
     shows: [],
     errors: '',
     modalActive: false,
-    modalContent: {}
+    modalContent: {},
+    searchField: '',
+    searchResult: []
   },
   mutations: {
     fillShows(state, response) {
@@ -24,6 +26,16 @@ export default createStore({
     },
     closeModal(state) {
       state.modalContent = {};
+    },
+    fillSearchResults(state, response) {
+      state.searchResult = [];
+      response.forEach(item => state.searchResult.push(item.show));
+    },
+    updateSearchField(state, input) {
+      state.searchField = input;
+    },
+    emptySearch(state) {
+      state.searchResult = [];
     }
   },
   actions: {
@@ -33,6 +45,10 @@ export default createStore({
       .then(function() {
         commit('fillGenres')
       })
+    },
+    getSearchResults({commit}, query) {
+      axios.get(`https://api.tvmaze.com/search/shows?q=${query}`)
+        .then(response => {commit('fillSearchResults', response.data)})
     }
   },
   modules: {

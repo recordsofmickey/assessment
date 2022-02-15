@@ -1,5 +1,4 @@
 <template>
-  <div><h1>{{ getGenre }}</h1></div>
   <div class="container">
         <serie-card v-for="(show, index) in selectedShows" :key="index" :serie="show"></serie-card>  
   </div>
@@ -10,24 +9,11 @@ export default {
     components: {
         SerieCard,
     },
-    data() {
-        return{
-            genre: this.$router.currentRoute
+    computed: {
+        selectedShows() {
+            return this.$store.state.searchResult;
         }
     },
-    computed: {
-        getGenre() {
-            return this.genre.fullPath.substring(8)
-        },
-        selectedShows() {
-            return this.$store.state.shows.filter(show => show.genres.includes(this.getGenre));
-        }
-    }, 
-    methods: {
-        emitShows() {
-            this.$store.commit('fillSelectedShows', this.getGenre);
-        }
-    }
 }
 </script>
 <style scoped>
