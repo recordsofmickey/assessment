@@ -1,6 +1,6 @@
 <template>
     <div class="card"  :style="{ backgroundImage: `url(${serie.image?.original || 'https://static.tvmaze.com/uploads/images/original_untouched/280/701095.jpg'}` }"> 
-        <div class="overlay" @click="openModal">
+        <div class="overlay" data-test="modal-click" @click="openModal">
             <h2>{{serie.name}}</h2>
         </div>
     </div>
