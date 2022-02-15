@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-        <serie-card v-for="(show, index) in selectedShows" :key="index" :serie="show"></serie-card>  
+        <serie-card v-for="(show, index) in selectedShows" :key="index" :serie="show" data-test="serie-card"></serie-card>  
   </div>
 </template>
 <script>
@@ -24,5 +24,4 @@ export default {
         justify-content: center;
         flex-wrap: wrap;
     }
-
 </style>

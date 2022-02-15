@@ -1,8 +1,8 @@
 <template>
-    <div class="modal" @click="closeModal">
+    <div class="modal" @click="closeModal" data-test="modal-overlay">
         <div class="modal-content">
             <img :src="modalContent.image?.medium" alt="">
-            <span class="close" @click="closeModal">&times;</span>
+            <span class="close" @click="closeModal" data-test="modal-close-btn">&times;</span>
             <h1>{{modalContent.name}}</h1>
             <p>{{modalContent.network?.name || 'No network known'}}</p>
             <p v-html="modalContent.summary"></p>
