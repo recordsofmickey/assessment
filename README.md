@@ -18,7 +18,7 @@ Please keep in mind that we use VueJS in ABN AMRO. Preferably, you complete this
 
 
 
-I built this running on Node 14.16.1 using Vue3, Vuex and the Vue router. This because, as stated in the assignment ABN AMRO uses this framework. 
+I built this running on Node 14.16.1 using Vue3, Vuex and the Vue router. This because, as stated in the assignment, ABN AMRO uses this framework. 
 
 
 ## Project setup

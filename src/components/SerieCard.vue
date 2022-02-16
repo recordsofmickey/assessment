@@ -39,6 +39,11 @@ export default {
      align-items:flex-end;
      background-size:cover;
  }
+
+ .card:hover {
+     border: 2px solid #99e9f2;
+     box-shadow: 10px 5px 20px rgba(0, 0, 0, 0.432);
+ }
  
  h2 {
      color: white;

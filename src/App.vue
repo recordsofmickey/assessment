@@ -105,7 +105,8 @@ export default {
      justify-content: center;
    }
    .logo {
-     visibility: hidden;
+     /* visibility: hidden; */
+     margin: 3rem;
    }
    .nav_search {
      margin-top: 3rem;

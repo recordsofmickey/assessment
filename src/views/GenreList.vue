@@ -12,7 +12,8 @@ export default {
     },
     data() {
         return{
-            genre: this.$router.currentRoute
+            genre: this.$router.currentRoute,
+            showsUnsorted: []
         }
     },
     computed: {
