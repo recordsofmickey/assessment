@@ -39,11 +39,6 @@ export default {
       return this.$store.state.searchField
     }
   },
-  methods: {
-    updateSearch() {
-      
-    }
-  },
  mounted() { 
     this.$store.dispatch('getShows');
   }

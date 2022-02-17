@@ -27,6 +27,7 @@ export default {
      margin: 1rem 1rem;
      background-repeat: no-repeat;
      background-size: cover;
+     border: 2px solid transparent;
      
  }
  .overlay {
@@ -38,6 +39,7 @@ export default {
     justify-content: flex-start;
      align-items:flex-end;
      background-size:cover;
+     border: 2px solid transparent;
  }
 
  .card:hover {

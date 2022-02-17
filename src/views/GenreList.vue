@@ -13,7 +13,6 @@ export default {
     data() {
         return{
             genre: this.$router.currentRoute,
-            showsUnsorted: []
         }
     },
     computed: {
@@ -21,7 +20,7 @@ export default {
             return this.genre.fullPath.substring(8)
         },
         selectedShows() {
-            return this.$store.state.shows.filter(show => show.genres.includes(this.getGenre));
+            return this.$store.state.shows.filter(show => show.genres.includes(this.getGenre)).sort((a,b) => { return b.rating.average - a.rating.average});
         }
     }, 
 }
